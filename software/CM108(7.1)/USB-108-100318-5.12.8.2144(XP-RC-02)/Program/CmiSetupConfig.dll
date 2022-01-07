@@ -1,0 +1,25 @@
+[COPYFILES_32]
+Advance\DLL\CM108.cpl>>>%WINDIR%\system\CM108.cpl
+Advance\DLL\CM108rm.exe>>>%WINDIR%\system32\CM108rm.exe
+
+[COPYFILES_64]
+Advance\DLL\cmpa108.dll>>>%WINDIR%\syswow64\cmpa108.dll
+Advance\DLL\CM108.cpl>>>%WINDIR%\syswow64\CM108.dll
+Advance\DLL\CM10864.cpl>>>%WINDIR%\system32\CM108.cpl
+Advance\DLL\CM108rm64.exe>>>%WINDIR%\syswow64\CM108rm.exe
+
+
+[POSTRUNAPP_INSTALL_32]
+%WINDIR%\system32\rundll32.exe %WINDIR%\system\CM108.cpl,CMICtrlWnd
+
+[POSTRUNAPP_INSTALL_64]
+%WINDIR%\syswow64\rundll32.exe %WINDIR%\syswow64\CM108.dll,CMICtrlWnd
+
+[ADDREG_32]
+HKLM,"Software\Microsoft\Windows\CurrentVersion\Control Panel\Cpls",Cm108cpl,,"%WINDIR%\System\cm108.cpl"
+HKLM,"Software\Microsoft\Windows\CurrentVersion\Run",Cm108Sound,,"RunDll32 cm108.cpl,CMICtrlWnd"
+
+
+[ADDREG_64]
+HKLM,"Software\Microsoft\Windows\CurrentVersion\Run",Cm108Sound,,"%WINDIR%\syswow64\RunDll32.exe %WINDIR%\Syswow64\cm108.dll,CMICtrlWnd"
+

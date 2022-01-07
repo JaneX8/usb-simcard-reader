@@ -1,0 +1,61 @@
+[COPYFILES_32]
+Advance\DLL\c108prop.dll>>>%WINDIR%\system32\c108prop.dll
+Advance\DLL\CM108.cpl>>>%WINDIR%\system\CM108.cpl
+Advance\DLL\CM108rm.dll>>>%WINDIR%\system32\CM108rm.dll
+Advance\DLL\CM108rm.exe>>>%WINDIR%\system32\CM108rm.exe
+Advance\DLL\cmau108.dll>>>%WINDIR%\system\cmau108.dll
+Advance\DLL\a3d108pu.dll>>>%WINDIR%\system\a3d.dll -NODELETE
+Advance\DLL\a3d108pu.dll>>>%WINDIR%\system\a3d108pu.dll
+Advance\DLL\GdiPlus.dll>>>%WINDIR%\system32\GdiPlus.dll -NODELETE
+
+[COPYFILES_64]
+Advance\DLL\c108prop.dll>>>%WINDIR%\system32\c108prop.dll
+Advance\DLL\cmpa108.dll>>>%WINDIR%\syswow64\cmpa108.dll
+Advance\DLL\CM10864.cpl>>>%WINDIR%\syswow64\CM108.cpl
+Advance\DLL\CM108rm64.dll>>>%WINDIR%\syswow64\CM108rm.dll
+Advance\DLL\CM108rm64.exe>>>%WINDIR%\syswow64\CM108rm.exe
+Advance\DLL\a3d108pu.dll>>>%WINDIR%\system\a3d.dll -NODELETE
+Advance\DLL\a3d108pu.dll>>>%WINDIR%\system\a3d108pu.dll
+
+[POSTRUNAPP_INSTALL_32]
+%WINDIR%\system32\rundll32.exe %WINDIR%\system\CM108.cpl,CMICtrlWnd
+
+[POSTRUNAPP_INSTALL_64]
+%WINDIR%\syswow64\rundll32.exe %WINDIR%\syswow64\CM108.cpl,CMICtrlWnd
+
+[ADDREG_32]
+HKCR,CLSID\{C22B2845-6104-4c6c-8933-A05F358172C0},,0,"C-Media CM108 Property Component"
+HKCR,CLSID\{C22B2845-6104-4c6c-8933-A05F358172C0}\InProcServer32,,0,"%WINDIR%\System32\c108prop.dll"
+HKCR,CLSID\{C22B2845-6104-4c6c-8933-A05F358172C0}\ProgID,,0,"CMAudioPropertyCOM 8.2"
+HKCR,CLSID\{C22B2845-6104-4c6c-8933-A05F358172C0}\VersionIndependentProgID,,0,"CMAudioPropertyCOM 8.2"
+HKCR,CMAudioProperty,,0,"C-Media CM108 Property Component"
+HKCR,CMAudioProperty\CLSID,,0,{C22B2845-6104-4c6c-8933-A05F358172C0}
+HKCR,CMAudioProperty\CurVer,,0,"CMAudioPropertyCOM 8.2"
+HKCR,CMAudioProperty.7,,0,"C-Media CM108 Property Component"
+HKCR,CMAudioProperty.7\CLSID,,0,{C22B2845-6104-4c6c-8933-A05F358172C0}
+HKLM,"Software\Microsoft\Windows\CurrentVersion\Control Panel\Cpls",Cm108cpl,,"%WINDIR%\System\cm108.cpl"
+HKLM,"Software\Microsoft\Windows\CurrentVersion\Run",Cm108Sound,,"RunDll32 cm108.cpl,CMICtrlWnd"
+HKCR,Audio3D,,0,"Audio3DObject" -NODELETE
+HKCR,Audio3D\CLSID,,0,"{D8F1EEE0-F634-11CF-8700-00A0245D918B}" -NODELETE
+HKCR,CLSID\{D8F1EEE0-F634-11CF-8700-00A0245D918B},,0,"Audio3DObject" -NODELETE
+HKCR,CLSID\{D8F1EEE0-F634-11CF-8700-00A0245D918B}\InProcServer32,,0,a3d108pu.dll
+HKCR,CLSID\{D8F1EEE0-F634-11CF-8700-00A0245D918B}\InProcServer32,ThreadingModel,0,"Apartment" -NODELETE
+HKCU,"Software\Sensaura\Audio3D\Settings","SplashScreen",65537,0,0,0,0 -NODELETE
+
+[ADDREG_64]
+HKCR,CLSID\{C22B2845-6104-4c6c-8933-A05F358172C0},,0,"C-Media CM108 Property Component"
+HKCR,CLSID\{C22B2845-6104-4c6c-8933-A05F358172C0}\InProcServer32,,0,"%WINDIR%\System32\c108prop.dll"
+HKCR,CLSID\{C22B2845-6104-4c6c-8933-A05F358172C0}\ProgID,,0,"CMAudioPropertyCOM 8.2"
+HKCR,CLSID\{C22B2845-6104-4c6c-8933-A05F358172C0}\VersionIndependentProgID,,0,"CMAudioPropertyCOM 8.2"
+HKCR,CMAudioProperty,,0,"C-Media CM108 Property Component"
+HKCR,CMAudioProperty\CLSID,,0,{C22B2845-6104-4c6c-8933-A05F358172C0}
+HKCR,CMAudioProperty\CurVer,,0,"CMAudioPropertyCOM 8.2"
+HKCR,CMAudioProperty.7,,0,"C-Media CM108 Property Component"
+HKCR,CMAudioProperty.7\CLSID,,0,{C22B2845-6104-4c6c-8933-A05F358172C0}
+HKLM,"Software\Microsoft\Windows\CurrentVersion\Run",Cm108Sound,,"%WINDIR%\syswow64\RunDll32.exe %WINDIR%\Syswow64\cm108.cpl,CMICtrlWnd"
+HKCR,Audio3D,,0,"Audio3DObject" -NODELETE
+HKCR,Audio3D\CLSID,,0,"{D8F1EEE0-F634-11CF-8700-00A0245D918B}" -NODELETE
+HKCR,CLSID\{D8F1EEE0-F634-11CF-8700-00A0245D918B},,0,"Audio3DObject" -NODELETE
+HKCR,CLSID\{D8F1EEE0-F634-11CF-8700-00A0245D918B}\InProcServer32,,0,a3d108pu.dll
+HKCR,CLSID\{D8F1EEE0-F634-11CF-8700-00A0245D918B}\InProcServer32,ThreadingModel,0,"Apartment" -NODELETE
+HKCU,"Software\Sensaura\Audio3D\Settings","SplashScreen",65537,0,0,0,0 -NODELETE

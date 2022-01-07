@@ -1,0 +1,4 @@
+[SETUP]
+ATYPE=3
+INI_PATH=SoftwareDriver\InI
+SupportOS=win7

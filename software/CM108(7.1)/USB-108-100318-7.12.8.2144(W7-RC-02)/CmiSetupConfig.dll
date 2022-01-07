@@ -1,0 +1,38 @@
+
+[COPYFILES_32]
+SoftwareDriver\DLL\CM108.cpl>>>%WINDIR%\system\CM108.cpl
+SoftwareDriver\DLL\Vmix108.dll>>>%WINDIR%\Vmix108.dll
+oemicon\>>>%WINDIR%\
+
+[COPYFILES_64]
+SoftwareDriver\DLL\cmpa108.dll>>>%WINDIR%\syswow64\cmpa108.dll
+SoftwareDriver\DLL\CM108.cpl>>>%WINDIR%\syswow64\CM108.dll
+SoftwareDriver\DLL\CM10864.cpl>>>%WINDIR%\system32\CM108.cpl
+SoftwareDriver\DLL\Vmix108.dll>>>%WINDIR%\Vmix108.dll
+oemicon\>>>%WINDIR%\
+
+[POSTRUNAPP_INSTALL_32]
+%SETUPDIR%\Program\CmEnhance.exe "%HARDWAREID%" -WAIT
+%SETUPDIR%\Program\CmElv.exe "%WINDIR%\system32\RunDll32.exe %WINDIR%\system\cm108.cpl,CMICtrlWnd"
+
+[POSTRUNAPP_INSTALL_64]
+%SETUPDIR%\Program\CmEnhance.exe "%HARDWAREID%" -WAIT
+%SETUPDIR%\Program\CmElv64.exe "%WINDIR%\syswow64\RunDll32.exe %WINDIR%\Syswow64\cm108.dll,CMICtrlWnd"
+
+[ADDREG_32]
+HKLM,"Software\Microsoft\Windows\CurrentVersion\Control Panel\Cpls",Cm108cpl,,"%WINDIR%\System\cm108.cpl"
+
+HKLM,"Software\Microsoft\Windows\CurrentVersion\Run",Cm108Sound,,"RunDll32 cm108.cpl,CMICtrlWnd"
+HKLM,"Software\Microsoft\Windows\CurrentVersion\Uninstall\C-Media CM108 Like Sound Driver",DisplayName,,"%OEMTITLE%"
+HKLM,"Software\Microsoft\Windows\CurrentVersion\Uninstall\C-Media CM108 Like Sound Driver",DisplayIcon,,"%WINDIR%\Cmeau108.ico"
+HKLM,"Software\Microsoft\Windows\CurrentVersion\Uninstall\C-Media CM108 Like Sound Driver",UninstallString,,"%WINDIR%\System32\Cmeau108.exe /rm /pusb108"
+
+[ADDREG_64]
+HKLM,"Software\Microsoft\Windows\CurrentVersion\Run",Cm108Sound,,"%WINDIR%\syswow64\RunDll32.exe %WINDIR%\Syswow64\cm108.dll,CMICtrlWnd"
+HKLM,"Software\Microsoft\Windows\CurrentVersion\Uninstall\C-Media CM108 Like Sound Driver",DisplayName,,"%OEMTITLE%"
+HKLM,"Software\Microsoft\Windows\CurrentVersion\Uninstall\C-Media CM108 Like Sound Driver",DisplayIcon,,"%WINDIR%\Cmeau108.ico"
+HKLM,"Software\Microsoft\Windows\CurrentVersion\Uninstall\C-Media CM108 Like Sound Driver",UninstallString,,"%WINDIR%\System32\Cmeau108.exe /rm /pusb108"
+
+[ADDSTARTPROGRAM_32]
+
+[ADDSTARTPROGRAM_64]
